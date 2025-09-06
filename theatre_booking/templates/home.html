@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}Home - My Theatre{% endblock %}
+
+{% block content %}
+
+
+<section class="hero text-center text-white" >
+    <div class="d-flex flex-column justify-content-center align-items-center h-100">
+        <h1>Welcome to Movie Booking</h1>
+        <p>Book your seats for the latest movies</p>
+        <a href="{{ url_for('user.movies') }}" class="btn btn-primary btn-lg">Now Showing</a>
+    </div>
+</section>
+
+<section class=" mt-5 text-center text-light">
+  <h2 class="text-warning mb-4">Why Choose My Theatre?</h2>
+  <div class="row">
+    <div class="col-md-4 mb-4">
+      <i class="bi bi-film fs-1 text-warning"></i>
+      <h5 class="mt-3">Latest Blockbusters</h5>
+      <p>Catch all the trending movies first in town.</p>
+    </div>
+    <div class="col-md-4 mb-4">
+      <i class="bi bi-cup-straw fs-1 text-warning"></i>
+      <h5 class="mt-3">Snacks & Drinks</h5>
+      <p>Enjoy fresh popcorn and beverages with your movie.</p>
+    </div>
+    <div class="col-md-4 mb-4">
+      <i class="bi bi-chair fs-1 text-warning"></i>
+      <h5 class="mt-3">Comfortable Seating</h5>
+      <p>Experience movies in comfort with our luxury seats.</p>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

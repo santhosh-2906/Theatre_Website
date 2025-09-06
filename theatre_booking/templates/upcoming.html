@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}Upcoming Movies{% endblock %}
+
+{% block content %}
+<h2 class="mb-4">Upcoming Movies</h2>
+<div class="row">
+    {% for movie in upcoming %}
+    <div class="col-12 col-md-6 col-lg-4 mb-4">
+        
+        <div class="card movie-card h-100">
+            <img src="{{ movie.poster_url }}" class="card-img-top movie-poster" alt="{{ movie.title }}">
+            <div class="card-body">
+                <h5 class="card-title">{{ movie.title }}</h5>
+                <p class="card-text">{{ movie.description }}</p>
+                <p class="card-text">
+                    <small>Release Date: {{ movie.release_date }}</small>
+                </p>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

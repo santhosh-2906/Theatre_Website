@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}Add Snack{% endblock %}
+
+{% block content %}
+<section class="w-100" style="max-width: 400px; margin: auto;">
+    <h2 class="mb-4 text-center">Add Snack</h2>
+
+    <form method="POST" action="/admin/add_snack">
+        <div class="mb-3">
+            <label for="name" class="form-label">Snack Name</label>
+            <input type="text" class="form-control" id="name" name="name" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="price" class="form-label">Price (₹)</label>
+            <input type="number" class="form-control" id="price" name="price" step="0.01" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100">Add Snack</button>
+    </form>
+</section>
+{% endblock %}

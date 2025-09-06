@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}Edit Show{% endblock %}
+
+{% block content %}
+<h2>Edit Show</h2>
+
+<form method="POST">
+    <div class="mb-3">
+        <label class="form-label">Movie</label>
+        <select name="movie_id" class="form-select" required>
+            {% for m in movies %}
+                <option value="{{ m[0] }}" {% if m[0] == show[1] %}selected{% endif %}>{{ m[1] }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Screen</label>
+        <select name="screen_id" class="form-select" required>
+            {% for s in screens %}
+                <option value="{{ s[0] }}" {% if s[0] == show[2] %}selected{% endif %}>{{ s[1] }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Show Time</label>
+        <input type="datetime-local" name="show_time" class="form-control" value="{{ show[3]|string }}" required>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Price</label>
+        <input type="number" step="0.01" name="price" class="form-control" value="{{ show[4] }}" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Update Show</button>
+</form>
+{% endblock %}

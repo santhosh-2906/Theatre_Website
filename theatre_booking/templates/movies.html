@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}Now Showing{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <h2 class="text-center text-warning mb-5">🎬 Now Showing</h2>
+
+    {% if movies %}
+        <div class="row">
+            {% for movie in movies %}
+            <div class="col-12 col-md-6 col-lg-4 mb-4">
+                <div class="card movie-card h-100 shadow-lg">
+                    <img src="{{ movie.poster_url }}" class="card-img-top movie-poster" alt="{{ movie.title }}">
+                    <div class="card-body d-flex flex-column text-light">
+                        <h5 class="card-title text-warning">{{ movie.title }}</h5>
+                        <p class="card-text flex-grow-1">{{ movie.description }}</p>
+                        <p class="card-text"><small class="text-light">⏳ Duration: {{ movie.duration }}</small></p>
+                        <p class="card-text"><small class="text-light">📅 Release: {{ movie.release_date }}</small></p>
+                        <a href="{{ url_for('user.shows', movie_id=movie.id) }}" 
+                           class="btn btn-warning text-light fw-bold mt-auto">
+                             View Shows
+                        </a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p class="text-center text-light">No movies are currently showing. Please check back later.</p>
+    {% endif %}
+</div>
+{% endblock %}

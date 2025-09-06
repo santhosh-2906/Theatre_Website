@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}Seat Selection{% endblock %}
+
+{% block content %}
+<h2>{{ movie }} - {{ show[3] }}</h2>
+<p>Total Seats: {{ show[5] }} | Price per Seat: ${{ show[4] }}</p>
+
+<form method="POST">
+    <div class="cinema-screen">SCREEN</div>
+    <div class="seat-grid seat-container">
+        {% for i in range(1, show[5]+1) %}
+        {% set seat_label = 'S' ~ i %}
+        {% if seat_label in booked_seats %}
+        <div class="booked-seat">{{ seat_label }}</div>
+        {% else %}
+        <label>
+            <input type="checkbox" name="seats" value="{{ seat_label }}" hidden>
+            <span>{{ seat_label }}</span>
+        </label>
+        {% endif %}
+        {% if i % 8 == 4 %}
+            <div class="aisle"></div>
+        {% endif %}
+        {% endfor %}
+    </div>
+    <button type="submit" class="btn btn-success mt-3">Confirm Booking</button>
+</form>
+
+{% endblock %}

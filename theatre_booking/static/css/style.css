@@ -1,0 +1,350 @@
+.theatre-bg {
+    background: url("../img/theatrebg.png") no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Merriweather', serif;
+    color: #f8f9fa;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+main {
+    flex: 1;
+}
+footer {
+    height: 40px;
+}
+
+/* Add subtle dark overlay so text is readable */
+.theatre-bg::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: -1;
+}
+
+/*  Navbar */
+.navbar {
+    background: rgba(0, 0, 0, 0.85) !important;
+    backdrop-filter: blur(6px);
+    border-bottom: 2px solid #c89b3c;
+}
+
+.navbar-brand {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #ffcc00 !important;
+    font-family: 'Georgia', serif;
+    letter-spacing: 1px;
+}
+
+.navbar-nav .nav-link {
+    color: #f8f9fa !important;
+    margin-right: 10px;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #ffcc00 !important;
+}
+
+/*  Dropdown menu */
+.dropdown-menu {
+    background-color: #222;
+    border: 1px solid #c89b3c;
+}
+
+.dropdown-menu .dropdown-item {
+    color: #f8f9fa;
+}
+
+.dropdown-menu .dropdown-item:hover {
+    background-color: #c89b3c;
+    color: #000;
+}
+
+/*  Main container styling */
+.container {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 20px 25px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(200, 155, 60, 0.3);
+}
+
+/*  Headings */
+h1, h2, h3, h4 {
+    color: #ffcc00;
+    font-family: 'Merriweather', serif;
+    font-weight: bold;
+}
+
+/*  Buttons (gold theme) */
+.btn, .btn-primary {
+    background-color: #c89b3c;
+    border: none;
+    color: #fff;
+    font-weight: bold;
+}
+.btn:hover, .btn-primary:hover {
+    background-color: #a67c2c;
+    color: #fff;
+}
+
+/*  Movie Card Styling */
+.movie-card {
+    background: rgba(0, 0, 0, 0.85);
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 12px;
+    color: #f8f9fa !important;
+}
+
+.movie-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(255, 215, 0, 0.6);
+}
+
+.movie-poster {
+    height: 350px;
+    object-fit: wrap;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+/* Shows table custom styling */
+.table.shows-table {
+    background-color: rgba(20, 20, 20, 0.95) !important;
+    border: 1px solid rgba(200, 155, 60, 0.4) !important;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 0 18px rgba(200, 155, 60, 0.25);
+    color: #f8f9fa !important;
+}
+
+/* Header */
+.table.shows-table thead th {
+    background: linear-gradient(90deg, #c89b3c, #a67c2c) !important;
+    color: #000 !important;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border: none !important;
+}
+
+/* Rows */
+.table.shows-table tbody tr {
+    background-color: rgba(20, 20, 20, 0.95) !important;
+    color: #f8f9fa !important;
+}
+
+.table.shows-table tbody tr:nth-child(even) {
+    background-color: rgba(40, 40, 40, 0.95) !important;
+}
+
+.table.shows-table tbody tr:hover {
+    background-color: rgba(200, 155, 60, 0.2) !important;
+}
+
+.table.shows-table td, 
+.table.shows-table th {
+    padding: 12px 16px !important;
+    vertical-align: middle;
+}
+
+.table.shows-table tbody td {
+    background-color: inherit !important;
+    color: inherit !important;
+}
+
+.table.shows-table thead th {
+    background-clip: padding-box !important; /* avoid white bleed */
+}
+
+/* Buttons inside table */
+.table.shows-table .btn-success {
+    background: #c89b3c !important;
+    border: none !important;
+    font-weight: bold;
+    color: #000 !important;
+    padding: 6px 14px !important;
+    border-radius: 6px !important;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+.table.shows-table .btn-success:hover {
+    background: #a67c2c !important;
+    color: #000 !important;
+    transform: scale(1.05);
+}
+
+/* seat selection */
+
+.seat-container {
+    display: flex;
+    justify-content: center;  /* center horizontally */
+    align-items: center;      /* center vertically (optional) */
+    width: 100%;
+}
+.seat-grid {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 420px;
+    margin-top: 20px;
+}
+
+/* Available seat */
+.seat-grid label {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+    text-align: center;
+    line-height: 46px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    background: rgba(20, 20, 20, 0.9);
+    border: 1px solid rgba(200, 155, 60, 0.6);
+    color: #f8f9fa;
+    transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.seat-grid label:hover {
+    background: rgba(200, 155, 60, 0.3);
+    transform: scale(1.05);
+}
+
+/* Selected seat */
+.seat-grid input[type="checkbox"]:checked + * {
+    background: #c89b3c;
+    color: #000;
+    border-color: #c89b3c;
+}
+
+/* Booked seat (unavailable) */
+.seat-grid .booked-seat {
+    background: #444 !important;
+    color: #aaa !important;
+    border: 1px solid #666;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.seat-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr) 40px repeat(4, 1fr); /* 4 seats + aisle + 4 seats */
+    gap: 10px;
+    max-width: 500px;
+    margin: 20px auto;
+    justify-items: center;
+    margin: 0 auto;
+}
+
+.seat-grid .aisle {
+    grid-column: 5; 
+    width: 40px;
+}
+
+.seat-grid label {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    background: rgba(20, 20, 20, 0.9);
+    border: 1px solid rgba(200, 155, 60, 0.6);
+    color: #f8f9fa;
+    transition: all 0.3s ease;
+}
+.seat-grid label:hover {
+    background: rgba(200, 155, 60, 0.3);
+    transform: scale(1.05);
+}
+.seat-grid input[type="checkbox"]:checked + span {
+    background: #c89b3c;
+    color: #000;
+    border-color: #c89b3c;
+}
+.seat-grid .booked-seat {
+    background: #444;
+    color: #aaa;
+    border: 1px solid #666;
+    pointer-events: none;
+}
+
+.seat-grid label span {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 8px;
+    text-align: center;
+    background: #111;
+    border: 1px solid gold;
+    color: gold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+
+.seat-grid input:checked + span {
+    background: green;
+    color: white;  
+    border-color: green;
+}
+
+.cinema-screen {
+    width: 80%;
+    margin: 0 auto 25px auto;
+    padding: 10px;
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #000;
+    background: linear-gradient(90deg, #c89b3c, #a67c2c);
+    border-radius: 0 0 30px 30px;
+    box-shadow: 0 5px 20px rgba(200, 155, 60, 0.4);
+    letter-spacing: 2px;
+}
+
+
+.cinema-screen::after {
+    content: "";
+    display: block;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    margin-top: 5px;
+}
+
+.btn-success {
+    background-color: #28a745;
+    border: none;
+    font-weight: bold;
+}
+.btn-success:hover {
+    background-color: #218838;
+}
+
+
+/*  Footer */
+footer {
+    background: rgba(0, 0, 0, 0.9) !important;
+    border-top: 2px solid #c89b3c;
+    font-size: 0.9rem;
+    color: #ddd;
+}
+footer p {
+    margin: 0;
+    color: #ffcc00;
+    font-family: 'Georgia', serif;
+}

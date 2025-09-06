@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+
+{% block title %}Admin Dashboard{% endblock %}
+
+{% block content %}
+<section class="container mt-4">
+    <h2 class="mb-4 text-center">Admin Dashboard</h2>
+
+    <!-- Add buttons -->
+    <div class="row text-center mb-4">
+        <div class="col-md-4 mb-3">
+            <a href="/admin/add_movie" class="btn btn-primary w-100">Add Movie</a>
+        </div>
+        <div class="col-md-4 mb-3">
+            <a href="/admin/add_show" class="btn btn-success w-100">Add Show</a>
+        </div>
+        <div class="col-md-4 mb-3">
+            <a href="/admin/add_snack" class="btn btn-warning w-100">Add Snack</a>
+        </div>
+    </div>
+
+    <!-- Movies Section -->
+    <h3>Movies</h3>
+    <div class="row">
+        {% for movie in movies %}
+        <div class="col-md-4 mb-3">
+            <div class="card p-2">
+                <img src="{{ movie.poster_url }}" class="card-img-top" alt="{{ movie.title }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ movie.title }}</h5>
+                    <p class="card-text">{{ movie.description }}</p>
+                    <a href="/admin/edit_movie/{{ movie.id }}" class="btn btn-sm btn-info">Edit</a>
+                    <a href="/admin/delete_movie/{{ movie.id }}" class="btn btn-sm btn-danger">Delete</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <!-- Shows Section -->
+    <h3 class="mt-5">Shows</h3>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Movie</th>
+                <th>Screen</th>
+                <th>Time</th>
+                <th>Price</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for show in shows %}
+            <tr>
+                <td>{{ show.movie_title }}</td>
+                <td>{{ show.screen_name }}</td>
+                <td>{{ show.show_time }}</td>
+                <td>{{ show.price }}</td>
+                <td>
+                    <a href="/admin/edit_show/{{ show.id }}" class="btn btn-sm btn-info">Edit</a>
+                    <a href="/admin/delete_show/{{ show.id }}" class="btn btn-sm btn-danger">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <!-- Snacks Section -->
+    <h3 class="mt-5">Snacks</h3>
+    <div class="row">
+        {% for snack in snacks %}
+        <div class="col-md-4 mb-3">
+            <div class="card p-2">
+                <div class="card-body">
+                    <h5 class="card-title">{{ snack.name }}</h5>
+                    <p class="card-text">Price: ₹{{ snack.price }}</p>
+                    <a href="/admin/edit_snack/{{ snack.id }}" class="btn btn-sm btn-info">Edit</a>
+                    <a href="/admin/delete_snack/{{ snack.id }}" class="btn btn-sm btn-danger">Delete</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <div class="text-center mt-4">
+        <a href="/admin/logout" class="btn btn-danger">Logout</a>
+    </div>
+</section>
+{% endblock %}

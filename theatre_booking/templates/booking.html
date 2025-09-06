@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block title %}My Bookings{% endblock %}
+
+{% block content %}
+<h2 class="mb-4">My Bookings</h2>
+
+{% if bookings %}
+<table class="table shows-table">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Movie</th>
+            <th>Show Time</th>
+            <th>Seat</th>
+            <th>Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for b in bookings %}
+        <tr>
+            <td>{{ loop.index }}</td>
+            <td>{{ b[1] }}</td>
+            <td>{{ b[2] }}</td>
+            <td>{{ b[3] }}</td>
+            <td>${{ b[4] }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<p>You have no bookings yet.</p>
+{% endif %}
+
+{% if ordered_snack %}
+<div class="alert alert-info mt-3">
+    You ordered: {{ ordered_snack.name }} | Price: ₹{{ ordered_snack.price }}
+</div>
+{% endif %}
+
+<a href="/snacks" class="btn btn-warning mt-3">Order Snacks</a>
+<a href="/" class="btn btn-secondary mt-3">Back to Home</a>
+{% endblock %}

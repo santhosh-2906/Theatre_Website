@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Login - My Theatre{% endblock %}
+
+{% block content %}
+
+<section class="w-100" style="max-width: 400px; margin: auto;">
+    <h2 class="mb-4 text-center">Login</h2>
+    <form method="POST" action="/login">
+        <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" name="email" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" id="password" name="password" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100">Login</button>
+    </form>
+
+    <p class="mt-3 text-center">
+        Don't have an account? <a href="/register">Register here</a>
+    </p>
+    <p class="mt-2 text-center small">
+        Are you an admin? <a href="/admin/login">Click here</a>
+    </p>
+</section>
+
+{% endblock %}
