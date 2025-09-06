@@ -3,12 +3,15 @@
 {% block title %}Shows{% endblock %}
 
 {% block content %}
+
+<!-- Available Shows Section -->
 <h2>Available Shows</h2>
 
 {% if shows %}
-    <!-- Display the movie title from the first show -->
+    <!-- Movie Title -->
     <h4 class="mb-3">{{ shows[0].movie_title }}</h4>
 
+    <!-- Shows Table -->
     <table class="table shows-table">
         <thead>
             <tr>
@@ -23,8 +26,9 @@
             <tr>
                 <td>{{ show.screen_name }}</td>
                 <td>{{ show.show_time }}</td>
-                <td>${{ show.price }}</td>
+                <td>₹{{ show.price }}</td>
                 <td>
+                    <!-- Seat Selection Button -->
                     <a href="{{ url_for('user.seat_selection', show_id=show.id) }}" class="btn btn-success btn-sm">
                         Select Seats
                     </a>
@@ -34,9 +38,11 @@
         </tbody>
     </table>
 {% else %}
+    <!-- No Shows Message -->
     <p>No shows available for this movie yet.</p>
 {% endif %}
 
-
+<!-- Back to Movies -->
 <a href="{{ url_for('user.movies') }}" class="btn btn-secondary mt-3">Back to Movies</a>
+
 {% endblock %}

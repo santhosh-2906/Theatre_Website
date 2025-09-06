@@ -3,13 +3,20 @@
 {% block title %}Snacks{% endblock %}
 
 {% block content %}
+
+<!-- Available Snacks Section -->
 <h2 class="mb-4">Available Snacks</h2>
+
+<!-- Snacks Grid -->
 <div class="row">
     {% for snack in snacks %}
     <div class="col-12 col-md-6 col-lg-4 mb-4">
         <div class="card movie-card h-100 text-center p-3">
+            <!-- Snack Details -->
             <h5 class="card-title text-warning">{{ snack.name }}</h5>
             <p class="card-text">Price: ₹{{ snack.price }}</p>
+
+            <!-- Order Snack Form -->
             <form method="POST">
                 <input type="hidden" name="snack_id" value="{{ snack.id }}">
                 <button type="submit" class="btn btn-warning btn-sm mt-2">Order Snack</button>
@@ -18,4 +25,5 @@
     </div>
     {% endfor %}
 </div>
+
 {% endblock %}

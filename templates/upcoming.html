@@ -3,13 +3,19 @@
 {% block title %}Upcoming Movies{% endblock %}
 
 {% block content %}
+
+<!-- Upcoming Movies Section -->
 <h2 class="mb-4">Upcoming Movies</h2>
+
+<!-- Movies Grid -->
 <div class="row">
     {% for movie in upcoming %}
     <div class="col-12 col-md-6 col-lg-4 mb-4">
-        
         <div class="card movie-card h-100">
+            <!-- Movie Poster -->
             <img src="{{ movie.poster_url }}" class="card-img-top movie-poster" alt="{{ movie.title }}">
+
+            <!-- Movie Details -->
             <div class="card-body">
                 <h5 class="card-title">{{ movie.title }}</h5>
                 <p class="card-text">{{ movie.description }}</p>
@@ -21,4 +27,5 @@
     </div>
     {% endfor %}
 </div>
+
 {% endblock %}

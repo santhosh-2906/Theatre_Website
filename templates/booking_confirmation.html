@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}Booking Confirmation{% endblock %}
+
+{% block content %}
+<!-- Booking Confirmation Section -->
+<div class="container text-center">
+    <h2>Booking Confirmation</h2>
+
+    <!-- Booking Details -->
+    <p>Movie: {{ movie }}</p>
+    <p>Show Time: {{ show[3] }}</p>
+    <p>Seats: {{ seats|join(', ') }}</p>
+    <p>Total Price: ₹{{ total_price }}</p>
+
+    <!-- Back to Home Button -->
+    <a href="/" class="btn btn-primary">Back to Home</a>
+</div>
+{% endblock %}

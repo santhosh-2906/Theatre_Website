@@ -3,28 +3,40 @@
 {% block title %}Add Movie{% endblock %}
 
 {% block content %}
+<!-- Movie Creation Form -->
 <h2>Add Movie</h2>
 <form method="POST" action="/admin/add_movie">
+    <!-- Title -->
     <div class="mb-3">
         <label>Title</label>
         <input type="text" name="title" class="form-control" required>
     </div>
+
+    <!-- Description -->
     <div class="mb-3">
         <label>Description</label>
         <textarea name="description" class="form-control" required></textarea>
     </div>
+
+    <!-- Duration -->
     <div class="mb-3">
         <label>Duration</label>
         <input type="text" name="duration" class="form-control" required>
     </div>
+
+    <!-- Poster URL -->
     <div class="mb-3">
         <label>Poster URL</label>
         <input type="text" name="poster_url" class="form-control">
     </div>
+
+    <!-- Release Date -->
     <div class="mb-3">
         <label>Release Date</label>
         <input type="date" name="release_date" class="form-control" required>
     </div>
+
+    <!-- Submit -->
     <button type="submit" class="btn btn-primary">Add Movie</button>
 </form>
 {% endblock %}

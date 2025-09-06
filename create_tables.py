@@ -69,7 +69,6 @@ def create_bookings_table(cursor):
     """)
 
 def main():
-    # Get DB connection
     conn = get_db_connection()
     cursor = conn.cursor()
 

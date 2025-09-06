@@ -3,10 +3,11 @@
 {% block title %}Admin Dashboard{% endblock %}
 
 {% block content %}
+<!-- Admin Dashboard -->
 <section class="container mt-4">
     <h2 class="mb-4 text-center">Admin Dashboard</h2>
 
-    <!-- Add buttons -->
+    <!-- Quick Action Buttons -->
     <div class="row text-center mb-4">
         <div class="col-md-4 mb-3">
             <a href="/admin/add_movie" class="btn btn-primary w-100">Add Movie</a>
@@ -82,6 +83,7 @@
         {% endfor %}
     </div>
 
+    <!-- Logout -->
     <div class="text-center mt-4">
         <a href="/admin/logout" class="btn btn-danger">Logout</a>
     </div>
