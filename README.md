@@ -4,6 +4,11 @@
 
 	A full-stack movie theatre booking app built with Flask + MySQL. Users can browse movies, select seats, book tickets with snacks, and view booking history. Admins have a secure panel to manage movies, shows, users, and theatre screens.
 
+**Project Screenshot**
+
+![Theatre Website - Homepage](static/img/image.png)
+
+
  **Features**
 
  	User authentication (Flask-Login)
