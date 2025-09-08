@@ -10,7 +10,7 @@
 
  	Interactive seat selection (prevents double booking)
 
-	 Ticket booking with snack add-ons
+	Ticket booking with snack add-ons
 
  	Booking history for users
 
