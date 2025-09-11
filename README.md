@@ -8,6 +8,10 @@
 
 ![Theatre Website - Homepage](static/img/image.png)
 
+**🌐 Live Demo**
+
+Deployed on render: https://theatre-website-1.onrender.com/
+
 
  **Features**
 
